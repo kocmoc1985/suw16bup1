@@ -6,6 +6,8 @@ function initialize() {
     //
     includeHtml("content/header.html", "#header");
     //
+    includeHtml("content/sidebar-content.html", "#sidebar-content");
+    //
     includeHtml("content/footer.html", "#footer-container-main");
 }
 
