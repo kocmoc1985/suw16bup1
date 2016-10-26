@@ -1,10 +1,11 @@
 .footer-container-main{
-    height: 40%;
+    height: @footer-height;
     background-color: #2A2730;
     font-size: 11pt;
     color: white;
     text-align: left;
-
+    clear: both;
+    
     a{
         padding-right: 10px;
         padding-bottom: 10px;
@@ -16,13 +17,15 @@
     }
 }
 
+.footer-container-main a:hover{
+    color: lightgray;
+}
+
 .footer-last{
     text-align: right;
 }
 
-.footer-container-main a:hover{
-    color: lightgray;
-}
+
 
 .footer-standard-margin{
     margin-top: 10px;
