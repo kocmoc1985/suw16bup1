@@ -34,68 +34,81 @@ html,body{
 .sidebar-content{
     min-height: @side-bar-content-initial-height;
     background-color: lightpink;
-    
+
     .sidebar{
+        position: relative;
         background-color: green !important;
-        min-height: 20vh;
+        /*min-height: 20vh;*/
         padding-top: 30px;
+        padding-bottom: 30px;
+
+        .sidebar-menu{
+            display: inline-block;
+            position: absolute;
+            right: 5px;
+            top: 5px;
+        }
+
+        .sidebar-entry{
+            margin: 0px 0px 5px 20px;
+            padding: 3px;
+            width: 90%;
+            background-color: red;
+            min-height: 3vh;
+
+            .index{
+                display: none;
+            }
+        }
     }
 
     .content{
         background-color: yellow !important;
         min-height: @side-bar-content-initial-height;
         padding-top: 30px;
+
+        .blog-entry{
+            margin: 0px 0px 20px 20px;
+            padding: 15px;
+            width: 80%;
+            background-color: red;
+            min-height: 30vh;
+
+            .blog-entry-title{
+                width: 90%;
+                height: 5vh;
+                background-color: #00ffff;
+                margin-bottom: @blog-default-margin-bottom;
+            }
+
+            .blog-entry-img{
+                width: 50%;
+                height: 20vh;
+                margin-bottom:@blog-default-margin-bottom;
+                background-color: #0000f6;
+            }
+
+            .blog-entry-content{
+                width: 90%;
+                min-height: 15vh;
+                margin-bottom:@blog-default-margin-bottom;
+                background-color: #bababa;
+            }
+
+            .blog-entry-foot{
+                width: 50%;
+                height: 5vh;
+                background-color: #00ffff;
+            }
+        }
     }
 }
 
 
 
-.blog-entry{
-    margin: 0px 0px 20px 20px;
-    padding: 15px;
-    width: 80%;
-    background-color: red;
-    min-height: 30vh;
 
-    .blog-entry-title{
-        width: 90%;
-        height: 5vh;
-        background-color: #00ffff;
-        margin-bottom: @blog-default-margin-bottom;
-    }
 
-    .blog-entry-img{
-        width: 50%;
-        height: 20vh;
-        margin-bottom:@blog-default-margin-bottom;
-        background-color: #0000f6;
-    }
 
-    .blog-entry-content{
-        width: 90%;
-        min-height: 15vh;
-        margin-bottom:@blog-default-margin-bottom;
-        background-color: #bababa;
-    }
-
-    .blog-entry-foot{
-        width: 50%;
-        height: 5vh;
-        background-color: #00ffff;
-    }
-}
-
-.sidebar-entry{
-    margin: 0px 0px 5px 15px;
-    padding: 3px;
-    width: 90%;
-    background-color: red;
-    min-height: 3vh;
-
-    .index{
-        display: none;
-    }
-}
 
 
 

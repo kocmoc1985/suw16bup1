@@ -17,6 +17,19 @@ function initialize() {
     addEventsToSidebarEntries();
     //
     showBlog(-1);//show latest blog
+    //
+    addEventToSideBarMenuBtn();
+}
+
+function addEventToSideBarMenuBtn() {
+    //
+    $(".sidebar-menu").click(function () {
+        if ($(".sidebar-entry").is(':visible')) {
+            $(".sidebar-entry").slideUp(500);
+        } else {
+            $(".sidebar-entry").slideDown(500);
+        }
+    });
 }
 
 function addEventsToSidebarEntries() {
