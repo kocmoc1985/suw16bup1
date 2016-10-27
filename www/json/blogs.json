@@ -2,8 +2,22 @@
     "blogs": [
         {
             "title": "Hej på dej",
-            "content": "",
+            "content": "This is article one",
             "date": "2016-October-27",
+            "author": "",
+            "image": ""
+        },
+        {
+            "title": "Latest Events",
+            "content": "This is article two",
+            "date": "2016-October-28",
+            "author": "",
+            "image": ""
+        },
+        {
+            "title": "Nu händer det",
+            "content": "This is article two",
+            "date": "2016-October-29",
             "author": "",
             "image": ""
         }

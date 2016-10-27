@@ -39,6 +39,17 @@ var blog1 = new Blog(title, content, date, author, image);
 blogs.addBlog(blog1);
 
 
+var title = "Latest Events";
+var content = "";
+var date = getDateFlex(formatYYY_mm_dd);
+var author = "";
+var image = "";
+//
+var blog2 = new Blog(title, content, date, author, image);
+//
+blogs.addBlog(blog2);
+
+
 var jsonStr = JSON.stringify(blogs);
 
 console.log(jsonStr);
