@@ -50,7 +50,7 @@ html,body{
         }
 
         .sidebar-entry{
-            margin: 0px 0px 5px 20px;
+            margin: 0px 0px 5px 0px;
             padding: 3px;
             width: 90%;
             background-color: red;
@@ -60,7 +60,12 @@ html,body{
                 display: none;
             }
         }
+
+        .sidebar-entry:hover{
+            cursor: pointer;
+        }
     }
+
 
     .content{
         background-color: yellow !important;
@@ -77,8 +82,10 @@ html,body{
             .blog-entry-title{
                 width: 90%;
                 height: 5vh;
+                font-weight: bold;
                 background-color: #00ffff;
                 margin-bottom: @blog-default-margin-bottom;
+                padding: @blog-entry-default-padding;
             }
 
             img{
@@ -91,12 +98,14 @@ html,body{
                 min-height: 15vh;
                 margin-bottom:@blog-default-margin-bottom;
                 background-color: #bababa;
+                padding: @blog-entry-default-padding;
             }
 
             .blog-entry-foot{
                 width: 50%;
                 height: 5vh;
                 background-color: #00ffff;
+                padding: @blog-entry-default-padding;
             }
         }
     }
