@@ -5,7 +5,7 @@
             "content": "This is article one",
             "date": "2016-October-27",
             "author": "",
-            "image": ""
+            "image": "images/laboratory.png"
         },
         {
             "title": "Latest Events",
@@ -20,6 +20,13 @@
             "date": "2016-October-29",
             "author": "",
             "image": ""
+        },
+        {
+            "title": "Yippi",
+            "content": "This is article two",
+            "date": "2016-October-29",
+            "author": "",
+            "image": "images/blogg.jpg"
         }
     ]
 }

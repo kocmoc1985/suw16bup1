@@ -108,10 +108,18 @@ function showBlog(index) {
 
 function addBlogEntry(title, content, date, author, image, appendTo) {
     //
+    var imgHtml;
+    //
+    if (image.length > 0) {
+        imgHtml = "<div class='blog-entry-img'>" + "<img src='" + image + "'>" + "</div>";
+    } else {
+        imgHtml = "";
+    }
+    //
     var blog =
             "<div class='blog-entry'>" +
             "<div class='blog-entry-title'>" + title + "</div>" +
-            "<div class='blog-entry-img'>" + image + "</div>" +
+            imgHtml +
             "<div class='blog-entry-content'>" + content + "</div>" +
             "<div class='blog-entry-foot'>" + date + "/" + author + "</div>" +
             "</div>";
