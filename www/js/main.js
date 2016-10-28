@@ -78,7 +78,7 @@ function showSidebarEntries() {
 function addSidebarEntry(blogIndex, title, appendTo) {
     //
     var sidebarEntry =
-            "<div class='sidebar-entry'>" +
+            "<div class='sidebar-entry round-corners-med'>" +
             "<div class='index'>" + blogIndex + "</div>" +
             title +
             "</div>";
@@ -128,7 +128,7 @@ function addBlogEntry(title, content, date, author, image, appendTo) {
     }
     //
     var blog =
-            "<div class='blog-entry'>" +
+            "<div class='blog-entry round-corners-med'>" +
             "<div class='blog-entry-title'>" + title + "</div>" +
             imgHtml +
             "<div class='blog-entry-content'>" + content + "</div>" +

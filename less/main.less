@@ -18,6 +18,15 @@ html,body{
     transform: translateY(-50%);
 }
 
+.round-corners-med{
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -khtml-border-radius: 5px;
+}
+
+/******************************************************************************/
+
 .header{
     height: @header-height;
     h1{
@@ -43,12 +52,11 @@ html,body{
 
 .sidebar-content{
     min-height: @side-bar-content-initial-height;
-    background-color: lightpink;
+    background-color: @side-bar-content-background-color;
 
     .sidebar{
         position: relative;
-        background-color: green !important;
-        /*min-height: 20vh;*/
+
         padding-top: 30px;
         padding-bottom: 20px;
 
@@ -63,7 +71,7 @@ html,body{
             margin: 0px 0px 5px 0px;
             padding: 3px;
             width: 90%;
-            background-color: red;
+            border:@border-basic-a;
             min-height: 3vh;
 
             .index{
@@ -78,7 +86,6 @@ html,body{
 
 
     .content{
-        background-color: yellow !important;
         min-height: @side-bar-content-initial-height;
         padding-top: 30px;
 
@@ -86,7 +93,7 @@ html,body{
             margin: 0px 0px 20px 20px;
             padding: 15px;
             width: 95%;
-            background-color: red;
+            border:@border-basic-a;
             min-height: 30vh;
 
             .blog-entry-title{
