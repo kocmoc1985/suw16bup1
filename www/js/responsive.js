@@ -1,5 +1,5 @@
 var LARGE = 1200;
-var MEDIUM = 992;
+var MEDIUM = 972; //Bootstrap value: 992  //952
 var SMALL = 768;
 var X_SMALL = 480;
 //
