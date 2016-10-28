@@ -10,6 +10,7 @@
     "serve-favicon": "*",
     "gulp": "*",
     "gulp-less": "*",
+    "gulp-util": "*",
     "gulp-clean-css": "*",
     "bootstrap": "*"
   }

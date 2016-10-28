@@ -1,5 +1,7 @@
 'use strict';
 
+var server;
+
 module.exports = class Server {
   constructor() {
     // save our settings to this
@@ -34,8 +36,10 @@ module.exports = class Server {
 
     // listen on port 3000
     var me = this;
-    this.app.listen(this.settings.port,  function() {
-      console.log("Server listening on port "+me.settings.port);
+    
+    server = this.app.listen(this.settings.port,  function() {
+      console.log("Server listening on port " + me.settings.port);
     });
+    
   }
 }
