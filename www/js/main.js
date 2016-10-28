@@ -46,6 +46,13 @@ function addEventsToSidebarEntries() {
     $(".sidebar-entry").click(function () {
         var index = getBlogIndex($(this));
         showBlog(index);
+        //
+        if (isScrolledIntoView("#blog-entry-title") === false && classExists(".sidebar-entry-mobile-view")===false) { //
+            $('html, body').animate({
+                scrollTop: $("#blog-entry-title").offset().top - 20
+            }, 1000);
+        }
+        //
     });
     //
 }
@@ -129,7 +136,7 @@ function addBlogEntry(title, content, date, author, image, appendTo) {
     //
     var blog =
             "<div class='blog-entry round-corners-med'>" +
-            "<div class='blog-entry-title'>" + title + "</div>" +
+            "<div class='blog-entry-title' id='blog-entry-title'>" + title + "</div>" +
             imgHtml +
             "<div class='blog-entry-content'>" + content + "</div>" +
             "<div class='blog-entry-foot'>" + date + " / " + author + "</div>" +
@@ -195,13 +202,31 @@ function includeHtmlAsync(url, selector, addType) {
     });
 }
 
+//==============================================================================
+//==============================================================================
 
-(function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id))
-            return;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "//connect.facebook.net/sv_SE/all.js#xfbml=1";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
+function isScrolledIntoView(selector) {
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+    var elemTop = $(selector).offset().top;
+    var elemBottom = elemTop + $(selector).height();
+    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+}
+
+function classExists(className) {
+    if ($(className).length) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id))
+        return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "//connect.facebook.net/sv_SE/all.js#xfbml=1";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
