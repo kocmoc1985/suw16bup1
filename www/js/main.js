@@ -132,7 +132,7 @@ function addBlogEntry(title, content, date, author, image, appendTo) {
             "<div class='blog-entry-title'>" + title + "</div>" +
             imgHtml +
             "<div class='blog-entry-content'>" + content + "</div>" +
-            "<div class='blog-entry-foot'>" + date + "/" + author + "</div>" +
+            "<div class='blog-entry-foot'>" + date + " / " + author + "</div>" +
             "</div>";
     //
     $(appendTo).append(blog);
