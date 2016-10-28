@@ -27,6 +27,7 @@ module.exports = class LessWatch {
       try {
         return m.gulp
           .src(me.paths.lessInput)
+           //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
           .pipe(m.gulpless().on('error', me.catchError))
           .pipe(m.gulpless())
           .pipe(m.gulpcleancss())
@@ -44,7 +45,7 @@ module.exports = class LessWatch {
     });
   }
   
-  //!!!!!!!!
+  //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
    catchError(err){
         var gutil = require("gulp-util");
         gutil.log(gutil.colors.red("ERROR", 'less'), err);
