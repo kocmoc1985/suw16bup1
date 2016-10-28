@@ -25,9 +25,9 @@ function addEventToSideBarMenuBtn() {
     //
     $(".sidebar-menu").click(function () {
         if ($(".sidebar-entry").is(':visible')) {
-            $(".sidebar-entry").slideUp(500);
+            $(".sidebar-entry").fadeOut(500);
         } else {
-            $(".sidebar-entry").slideDown(500);
+            $(".sidebar-entry").fadeIn(500);
         }
     });
 }
@@ -35,7 +35,6 @@ function addEventToSideBarMenuBtn() {
 function addEventsToSidebarEntries() {
     //
     $(".sidebar-entry").click(function () {
-        console.log("clicked");
         var index = getBlogIndex($(this));
         showBlog(index);
     });
