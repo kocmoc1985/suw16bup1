@@ -56,19 +56,19 @@ html,body{
 
     .sidebar{
         position: relative;
-
         padding-top: 30px;
         padding-bottom: 20px;
+        border-bottom: 1px solid #e5e5e5;
 
         .sidebar-menu{
             display: inline-block;
             position: absolute;
-            right: 5px;
+            right: 10px;
             top: 5px;
         }
 
         .sidebar-entry{
-            margin: 0px 0px 5px 0px;
+            margin: 0px 0px 10px 20px;
             padding: 3px;
             width: 90%;
             border:@border-basic-a;
@@ -82,7 +82,14 @@ html,body{
         .sidebar-entry:hover{
             cursor: pointer;
         }
+        
+        .sidebar-entry-mobile-view{
+            width: 45% !important;
+            float: left;
+        }
     }
+
+
 
 
     .content{
@@ -93,7 +100,7 @@ html,body{
             margin: 0px 0px 20px 20px;
             padding: 15px;
             width: 95%;
-            border:@border-basic-a;
+            border:@border-basic-b;
             min-height: 30vh;
 
             .blog-entry-title{
@@ -113,7 +120,7 @@ html,body{
 
             .blog-entry-content{
                 width: 90%;
-                min-height: 15vh;
+                min-height: 5vh;
                 margin-bottom:@blog-default-margin-bottom;
                 padding: @blog-entry-default-padding;
             }

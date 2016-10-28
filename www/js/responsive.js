@@ -8,14 +8,21 @@ $(document).ready(function () {
     var width = $(window).width();
     //
     if (width < MEDIUM) {
+        //
         $(".sidebar-menu").removeClass("hide");
         $(".sidebar-menu").addClass("show");
+        //
+        $(".sidebar-entry").addClass("sidebar-entry-mobile-view");
     }
     //
     if (width > MEDIUM) {
+        //
         $(".sidebar-menu").removeClass("show");
         $(".sidebar-menu").addClass("hide");
+        //
+        $(".sidebar-entry").removeClass("sidebar-entry-mobile-view");
     }
+    //
 });
 //
 $(window).on('resize orientationChange', function (event) {
@@ -25,11 +32,15 @@ $(window).on('resize orientationChange', function (event) {
     if (width < MEDIUM) {
         $(".sidebar-menu").removeClass("hide");
         $(".sidebar-menu").addClass("show");
+        //
+        $(".sidebar-entry").addClass("sidebar-entry-mobile-view");
     }
     //
     if (width > MEDIUM) {
         $(".sidebar-menu").removeClass("show");
         $(".sidebar-menu").addClass("hide");
+        //
+        $(".sidebar-entry").removeClass("sidebar-entry-mobile-view");
     }
 });
 //
