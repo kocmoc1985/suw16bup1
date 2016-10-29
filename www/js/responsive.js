@@ -1,11 +1,15 @@
 var LARGE = 1200;
-var MEDIUM = 972; //Bootstrap value: 992  //952
+var MEDIUM = 972; //Bootstrap 992
 var SMALL = 768;
-var X_SMALL = 480;
+var X_SMALL = 460; // bootstrap 480
 //
 $(document).ready(function () {
     //
     var width = $(window).width();
+    //
+    if (width <= X_SMALL) {
+        $(".blog-entry img").addClass("image-xs-max-width");
+    }
     //
     if (width < MEDIUM) {
         //

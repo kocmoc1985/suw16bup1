@@ -10,6 +10,8 @@ html,body{
     visibility: visible;
 }
 
+
+
 .center-vertically{
     position: relative;
     top: 50%;
@@ -69,7 +71,7 @@ html,body{
 
         .sidebar-entry{
             font-size: @basic-font-size-vmin;
-            margin: 0px 0px 10px 20px;
+            margin: 0px 0px 10px @blog-entry-blog-entry-margin-left;
             padding: 3px;
             min-width: 40%;
             border:@border-basic-a;
@@ -97,7 +99,7 @@ html,body{
         padding-top: 30px;
 
         .blog-entry{
-            margin: 0px 0px 20px 20px;
+            margin: 0px 0px 20px @blog-entry-blog-entry-margin-left;
             padding: 15px;
             width: 95%;
             border:@border-basic-b;
@@ -116,6 +118,10 @@ html,body{
                 display: block;
                 margin-bottom: @blog-default-margin-bottom;
                 padding: @blog-entry-default-padding;
+            }
+
+            .image-xs-max-width{
+                max-width: 280px;
             }
 
             .blog-entry-content{
