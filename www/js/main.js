@@ -221,6 +221,7 @@ function classExists(className) {
     }
 }
 
+// facebook like button
 (function (d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id))

@@ -1,13 +1,13 @@
 .footer-container-main{
     height: @footer-height;
     background-color: @footer-background-color;
-    font-size: 11pt;
+    font-size: @basic-font-size-vmin;
     color: white;
     text-align: left;
     clear: both;
-    
+
     a{
-        padding-right: 10px;
+        padding-right: 30px;
         padding-bottom: 10px;
         padding-top: 10px;
         display: inline-block;
@@ -15,6 +15,11 @@
         color: white;
         cursor: pointer;
     }
+
+    .fb-like{
+        margin-right: 20px;
+    }
+
 }
 
 .footer-container-main a:hover{
@@ -26,11 +31,8 @@
 }
 
 
-.footer-standard-margin{
+.footer-column{
     margin-top: 10px;
+    padding-right: 15px;
 }
 
-.footer-padding-left-right{
-     padding-left: 15px;
-     padding-right: 15px;
-}
