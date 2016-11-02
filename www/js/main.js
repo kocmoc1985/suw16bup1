@@ -47,7 +47,7 @@ function addEventsToSidebarEntries() {
         var index = getBlogIndex($(this));
         showBlog(index);
         //
-        if (isScrolledIntoView("#blog-entry-title") === false && classExists(".sidebar-entry-mobile-view")===false) { //
+        if (isScrolledIntoView("#blog-entry-title") === false && isVisible(".sidebar-menu") === false) { //
             $('html, body').animate({
                 scrollTop: $("#blog-entry-title").offset().top - 20
             }, 1000);
@@ -213,12 +213,8 @@ function isScrolledIntoView(selector) {
     return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
 }
 
-function classExists(className) {
-    if ($(className).length) {
-        return true;
-    } else {
-        return false;
-    }
+function isVisible(selector) {
+    return $(selector).is(':visible');
 }
 
 // facebook like button

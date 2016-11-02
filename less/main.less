@@ -41,9 +41,6 @@ html,body{
 }
 
 
-
-
-
 .sidebar-content{
     min-height: @side-bar-content-initial-height;
     background-color: @side-bar-content-background-color;
@@ -52,7 +49,6 @@ html,body{
         position: relative;
         padding-top: 30px;
         padding-bottom: 20px;
-        border-bottom: 1px solid #e5e5e5;
 
         .sidebar-menu{
             display: inline-block;
@@ -63,6 +59,13 @@ html,body{
             img{
                 width: @side-bar-menu-height-width;
                 height: @side-bar-menu-height-width;
+            }
+        }
+
+        .sidebar-menu:hover{
+           img{
+                width: @side-bar-menu-height-width + 3px;
+                height: @side-bar-menu-height-width + 3px;
             }
         }
 
@@ -83,7 +86,6 @@ html,body{
             color: white;
             background-color: #563D7C;
         }
-
 
     }
 
@@ -150,6 +152,10 @@ html,body{
 
 
 @media (max-width:@MD){
+    .sidebar{
+        border-bottom: 1px solid #e5e5e5 !important;
+    }
+
     .sidebar-entry{
         .sidebar-entry-mobile-view;
     }
@@ -165,7 +171,7 @@ html,body{
 
 @media (max-width:@XS){
     .blog-entry img{
-        max-width: 280px;
+        max-width: 280px !important;
     }
 }
 
