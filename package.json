@@ -12,6 +12,11 @@
     "gulp-less": "*",
     "gulp-util": "*",
     "gulp-clean-css": "*",
-    "bootstrap": "*"
-  }
+    "bootstrap": "*",
+    "mysql": "*"
+  },
+    "scripts": {
+        "start": "node app.js"
+    }
+
 }
