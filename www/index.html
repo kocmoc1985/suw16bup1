@@ -11,14 +11,22 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/all.css" type="text/css"/>
         <link href="https://fonts.googleapis.com/css?family=Gabriela" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css?family=Prociono" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet"> 
         <!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script-->
         <script src="js/jquery-1.9.1.js"></script>
-        <script src="js/main_sql.js"></script>
-         <!--script src="js/main.js"></script-->
+        <!--script src="js/main_sql.js"></script-->
+        <script src="js/main.js"></script>
         <script src="js/responsive.js"></script>
         <!--script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script-->
     </head>
     <body>
+        <script>
+            $(document).ready(function () {
+                node_test_basic();
+                //    node_test_sql_basic("select * from articles","executeSelect");
+            });
+        </script>
         <div class="header header-background" id="header"></div>
         <div class="sidebar-content" id="sidebar-content"></div>
         <div class="footer-container-main" id="footer-container-main"></div>

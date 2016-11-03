@@ -11,26 +11,38 @@
     font-size: @basic-font-size-vmin;
 
     .sidebar{
-
+        font-family: 'Prociono', serif;
     }
 
     .content{
 
         .blog-entry-title{
-            font-family: sans-serif;
-            font-weight: bold;
+            font-family: 'Prociono', serif;
+            /*font-family: 'Anton', sans-serif;*/
+            font-size: 5vmin;
         }
 
         .blog-entry-content{
-
+            font-family: 'Prociono', serif;
         }
 
         .blog-entry-foot{
-
         }
     }
 }
 
 .footer-container-main{
     font-size: 2.2vmin;
+}
+
+@media (max-width:@XS){
+    .content{
+        font-size:@font-size-mobile-vmin;
+    }
+
+    .sidebar-entry{
+        font-size:@font-size-mobile-vmin;
+    }
+
+
 }
