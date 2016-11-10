@@ -18,6 +18,8 @@ function initialize() {
     //
     includeHtml("content/footer.html", "#footer-container-main");
     //
+    loadTemplates();
+    //
     showSidebarEntries();
     //
     addEventsToSidebarEntries();
@@ -29,6 +31,14 @@ function initialize() {
 
 //==============================================================================
 //==============================================================================
+//
+var SIDE_BAR_ENTRY;
+var BLOG_ENTRY;
+//
+function loadTemplates() {
+    SIDE_BAR_ENTRY = loadHtml("content/sideBarEntry.html");
+    BLOG_ENTRY = loadHtml("content/blogEntry.html");
+}
 
 function addEventToSideBarMenuBtn() {
     //
@@ -84,13 +94,13 @@ function showSidebarEntries() {
 
 function addSidebarEntry(blogIndex, title, appendTo) {
     //
-    var sidebarEntry =
-            "<div class='sidebar-entry round-corners-med'>" +
-            "<div class='index'>" + blogIndex + "</div>" +
-            title +
-            "</div>";
+    var templateObj = $(SIDE_BAR_ENTRY);
     //
-    $(appendTo).append(sidebarEntry);
+    $(templateObj).find(".text").text(title);
+    //
+    $(templateObj).find(".index").text(blogIndex);
+    //
+    $(appendTo).append(templateObj);
 }
 
 //==============================================================================
@@ -126,26 +136,26 @@ function showBlog(index) {
 
 function addBlogEntry(title, content, date, author, image, appendTo) {
     //
-    var imgHtml;
+    var template = $(BLOG_ENTRY);
+    //
+    $(template).find(".blog-entry-title").text(title);
     //
     if (image.length > 0) {
-        imgHtml = "<div class='blog-entry-img'>" + "<img src='" + image + "'>" + "</div>";
+        $(template).find(".blog-entry-img img").attr("src", image);
     } else {
-        imgHtml = "";
+        $(template).find(".blog-entry-img").remove();
     }
     //
-    var blog =
-            "<div class='blog-entry round-corners-med'>" +
-            "<div class='blog-entry-title' id='blog-entry-title'>" + title + "</div>" +
-            imgHtml +
-            "<div class='blog-entry-content'>" + content + "</div>" +
-            "<div class='blog-entry-foot'>" + date + " / " + author + "</div>" +
-            "</div>";
+    $(template).find(".blog-entry-content").text(content);
     //
-    $(appendTo).append(blog);
+    $(template).find(".blog-entry-foot").text(date + " / " + author);
+    //
+    $(appendTo).append(template);
+    //
     //
     $(".blog-entry").css({opacity: 0, visibility: "visible"}).animate({opacity: 1}, 1000);
 }
+
 
 //==============================================================================
 //==============================================================================
@@ -200,6 +210,18 @@ function includeHtmlAsync(url, selector, addType) {
             $(selector).append(msg);
         }
     });
+}
+
+function loadHtml(url) {
+    //
+    var html = $.ajax({
+        url: url,
+        type: "GET",
+        dataType: 'html',
+        async: false
+    }).responseText;
+    //
+    return html;
 }
 
 //==============================================================================
