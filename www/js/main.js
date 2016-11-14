@@ -55,6 +55,7 @@ function addEventsToSidebarEntries() {
     //
     $(".sidebar-entry").click(function () {
         var index = getBlogIndex($(this));
+//        var data = $(this).data(".index");
         showBlog(index);
         //
         if (isScrolledIntoView("#blog-entry-title") === false && isVisible(".sidebar-menu") === false) { //
@@ -79,11 +80,19 @@ function getBlogIndex(elem) {
     return -1;
 }
 
+function sortArrByDate(blogsArray) {
+    blogsArray.sort(function (a, b) {
+        return new Date(a.date).getTime() - new Date(b.date).getTime();
+    });
+}
+
 function showSidebarEntries() {
     //
     var blogsObj = getJsonFromUrlSync(JSON_FILE_PATH);
     //
     var blogsArr = blogsObj.blogs;
+    //
+    sortArrByDate(blogsArr);
     //
     for (var i = blogsArr.length - 1; i >= 0; i--) {
         var blogCurr = blogsArr[i];
@@ -113,6 +122,8 @@ function showBlog(index) {
     var blogsObj = getJsonFromUrlSync(JSON_FILE_PATH);
     //
     var blogsArr = blogsObj.blogs;
+    //
+    sortArrByDate(blogsArr);
     //
     if (index === -1) {
         index_ = blogsArr.length - 1;
