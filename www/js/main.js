@@ -54,8 +54,8 @@ function addEventToSideBarMenuBtn() {
 function addEventsToSidebarEntries() {
     //
     $(".sidebar-entry").click(function () {
-        var index = getBlogIndex($(this));
-//        var data = $(this).data(".index");
+        //
+        var index = $(this).data("index");
         showBlog(index);
         //
         if (isScrolledIntoView("#blog-entry-title") === false && isVisible(".sidebar-menu") === false) { //
@@ -68,17 +68,6 @@ function addEventsToSidebarEntries() {
     //
 }
 
-function getBlogIndex(elem) {
-    //
-    var children = elem.children();
-    //
-    for (var i = 0; i < children.length; i++) {
-        if (children[i].className === "index") {
-            return index = $(children[i]).text();
-        }
-    }
-    return -1;
-}
 
 function sortArrByDate(blogsArray) {
     blogsArray.sort(function (a, b) {
@@ -107,7 +96,7 @@ function addSidebarEntry(blogIndex, title, appendTo) {
     //
     $(templateObj).find(".text").text(title);
     //
-    $(templateObj).find(".index").text(blogIndex);
+    $(templateObj).data("index",blogIndex);
     //
     $(appendTo).append(templateObj);
 }
